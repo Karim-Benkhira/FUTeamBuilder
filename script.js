@@ -6,7 +6,7 @@ const playerForm = document.getElementById('player-form');
 
         const formations = {
             '4-3-3': {
-                'gk': { top: '90%', left: '50%' },
+                'gk': { top: '90%', left: '47%' },
                 'cb1': { top: '70%', left: '30%' },
                 'cb2': { top: '70%', left: '70%' },
                 'lb': { top: '70%', left: '10%' },
@@ -15,7 +15,7 @@ const playerForm = document.getElementById('player-form');
                 'cm2': { top: '50%', left: '50%' },
                 'cm3': { top: '50%', left: '70%' },
                 'lw': { top: '30%', left: '10%' },
-                'rw': { top: '30%', left: '90%' },
+                'rw': { top: '30%', left: '80%' },
                 'st': { top: '20%', left: '50%' }
             },
             '4-4-2': {
@@ -38,13 +38,12 @@ const playerForm = document.getElementById('player-form');
             playerPos.classList.add('player-position');
             playerPos.innerHTML = `
                 <img src="buno.png" alt="${playerName}" title="${playerName} - ${playerPosition} - ${playerRating}">
-                <div class="player-card">
-                    <h4>${playerName}</h4>
+                <h4>${playerName}</h4>
                     <p>${playerPosition}</p>
                     <p>${playerRating}</p>
                     <button class="edit-button">Edit</button>
                     <button class="delete-button">Delete</button>
-                </div>
+                
             `;
 
             // Set position based on playerPosition value and selected formation

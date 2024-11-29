@@ -1,18 +1,37 @@
 body {
-    background-color: #1a1a1a;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-family: Arial, sans-serif;
-    background-image: url(22432.jpg);
+    background-image: url(tet.jpg);
+    box-sizing: border-box;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    /* max-width: 1200px; */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
 }
 .form-section, .field-container, .bench-container {
     margin-bottom: 20px;
+}
+
+.form-section{
+    /* width: 100%; */
+    /* max-width: 600px; */
+    width: 40%;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.form-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.5em;
 }
 .form-section form {
     background-color: #333;
@@ -20,23 +39,22 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-.form-section h3 {
-    margin-bottom: 20px;
-    font-size: 1.5em;
-}
+
 .form-section label {
     display: block;
     margin-bottom: 10px;
     color: #ccc;
+    font-size: 1em;
 }
 .form-section input, .form-section select {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px 0px;
     margin-bottom: 20px;
     border: 1px solid #555;
     border-radius: 4px;
     background-color: #555;
     color: white;
+    font-size: 1em;
 }
 .form-section input::placeholder{
     padding-left: 10px;
@@ -50,66 +68,120 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
+    display: block;
+    width: calc(100% - 20px);
 }
 .form-section button:hover {
     background-color: #005a2a;
 }
 .field-container {
-    /* background-image: url('stadium_background.webp'); */
-    background-size: cover;
+    /* background-image: url('image 1.svg'); */
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    height: 900px;
+    width: max-content;
+   min-height: 800px;
     position: relative;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.players img{
+    width: 80px;
+    height: 120px;
 }
 
 .bench-container {
-    background-color: #444;
+    /* background-color: #444; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
 }
 .player-position {
     background: url('badge_gold.webp') no-repeat center center / cover;
     position: absolute;
     width: 150px;
-    height: 150px;
+    height: 200px;
     transform: translate(-50%, -50%);
     cursor: pointer;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    scale: 0.7;
+    
+    
     
 }
+.card{
+    width: 105px;
+    height: 154px;
+    background: url('badge_gold.webp') no-repeat center center / cover;
+}
+.players{
+    width: 90%;
+    position: absolute;
+    display: none;
+}
+#attackers , #center{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+ }
+ #attackers div , #center div{
+    margin: auto;
+ }
+ #defenders{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+ }
+ #defenders div{
+    margin: auto;
+ }
+ #goal-keeper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+/* .player-card {
+    position: absolute;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+} */
 .player-position img {
-    width: 40%;
-    height: 40%;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     background-color: white;
 }
-.player-card {
-    position: absolute;
-    background: url('badge_gold.webp') no-repeat center center / cover;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    width: 200px;
-    height: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    color: black;
-    display: none;
-}
+
 /* .player-card img{
     background-color: white;
 } */
-.player-card h4{
-    font-size: 0.9em;
-    margin-top: 50px;
+.player-position h4,
+.player-position p {
+    font-size: 1em;
+    margin: 5px 0;
     color: #fff;
 }
 
