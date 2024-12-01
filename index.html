@@ -5,274 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUT Team Builder</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-family: Arial, sans-serif;
-    background-image: url(tet.jpg);
-    box-sizing: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.container {
-    /* max-width: 1200px; */
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-
-}
-.form-section, .field-container, .bench-container {
-    margin-bottom: 20px;
-}
-
-.form-section{
-    /* width: 100%; */
-    /* max-width: 600px; */
-    width: 40%;
-    background-color: #333;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-.form-section h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #fff;
-    font-size: 1.5em;
-}
-.form-section form {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.form-section label {
-    display: block;
-    margin-bottom: 10px;
-    color: #ccc;
-    font-size: 1em;
-}
-.form-section input, .form-section select {
-    width: calc(100% - 20px);
-    padding: 10px 0px;
-    margin-bottom: 20px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #555;
-    color: white;
-    font-size: 1em;
-}
-.form-section input::placeholder{
-    padding-left: 10px;
-}
-
-.form-section button {
-    background-color: #007b3a;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    display: block;
-    width: calc(100% - 20px);
-}
-.form-section button:hover {
-    background-color: #005a2a;
-}
-.field-container {
-    /* background-image: url('image 1.svg'); */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: max-content;
-   min-height: 800px;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.players img{
-    width: 80px;
-    height: 120px;
-}
-
-.bench-container {
-    /* background-color: #444; */
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
-    padding: 20px;
-    border-radius: 8px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
-}
-.player-position {
-    background: url('badge_gold.webp') no-repeat center center / cover;
-    position: absolute;
-    width: 150px;
-    height: 200px;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 20px;
-    scale: 0.7;
-    
-    
-    
-}
-.card{
-    width: 105px;
-    height: 154px;
-    background: url('badge_gold.webp') no-repeat center center / cover;
-}
-.players{
-    width: 90%;
-    position: absolute;
-}
-#attackers , #center{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
- }
- #attackers div , #center div{
-    margin: auto;
- }
- #defenders{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
- }
- #defenders div{
-    margin: auto;
- }
- #goal-keeper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
-
-/* .player-card {
-    position: absolute;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
-    height: 80%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-} */
-.player-position img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: white;
-}
-
-/* .player-card img{
-    background-color: white;
-} */
-.player-position h4,
-.player-position p {
-    font-size: 1em;
-    margin: 5px 0;
-    color: #fff;
-}
-
-.player-card p{
-    font-size: 0.8em;
-    margin: 2px 0;
-}
-.player-card button {
-    background-color: #007b3a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 2px 5px;
-    margin-top: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-.player-card button:hover {
-    background-color: #005a2a;
-}
-
-.bench-player {
-    display: inline-block;
-    margin: 10px;
-}
-
-.bench-player img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.bench-player .player-card {
-    display: block; 
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    transform: none;
-}
-    </style>
 </head>
 <body>
+    <!--Strat Header-->
+    <header class="site-header">
+        <div class="container">
+            <h1>FUT Team Builder</h1>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--End Header-->
     <div class="container">
         <!-- Form to Add Player -->
         
 
         <!-- Field Section -->
         <section class="field-container" id="field-container">
-            <img src="image 1.svg" alt="">
-            <div class="players">
-                <div id="attackers">
-                    <div class="card LW">
-                    </div>
-                    <div class="card ST1">
-                    </div>
-                    <div class="card RW">
-                    </div>
-                </div>
-                <div id="center">
-                    <div class="card CM1">
-                    </div>
-                    <div class="card CM2">
-                    </div>
-                    <div class="card CM3">
-                    </div>
-                </div>
-                <div id="defenders">
-                    <div class="card RB">
-                    </div>
-                    <div class="card CB1">
-                    </div>
-                    <div class="card CB2">
-                    </div>
-                    <div class="card LB">
-                    </div>
-                </div>
-                <div id="goal-keeper">
-                    <div class="card GK">
-                        
-                    </div>
-                </div>
-            </div>
             
             <!-- Player positions will be added here -->
         </section>
@@ -281,15 +35,17 @@
         <section class="form-section">
             <form id="player-form">
                 <h3>Add New Player</h3>
+                <label for="player-image">Player Image</label>
+                <input id="player-image" name="player-image" accept="">
                 <label for="formation-select">Select Formation</label>
                 <select id="formation-select">
                     <option value="4-3-3">4-3-3</option>
                     <option value="4-4-2">4-4-2</option>
                 </select>
                 <label for="player-name">Player Name</label>
-                <input type="text" id="player-name" placeholder="Enter player name" required>
+                <input type="text" id="player-name" placeholder="Enter player name" >
                 <label for="player-position">Position</label>
-                <!-- <input type="text" id="player-position" placeholder="Enter position (e.g., ST, LW, GK)" required> -->
+                <!-- <input type="text" id="player-position" placeholder="Enter position (e.g., ST, LW, GK)" > -->
                  <select id="player-position">
                     <option value="gk">gk</option>
                     <option value="cb1">cb1</option>
@@ -299,17 +55,50 @@
                     <option value="cm1">cm1</option>
                     <option value="cm2">cm2</option>
                     <option value="cm3">cm3</option>
+                    <option value="lm">lm</option>
+                    <option value="rm">rm</option>
                     <option value="lw">lw</option>
                     <option value="rw">rw</option>
                     <option value="st">st</option>
-                 </select>
+                    </select>
+                    <label for="player-country">Player Country</label>
+                    <select id="player-country" name="player-country">
+                        <option value="USA">USA</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="France">France</option>
+                        <!-- Add other countries as needed -->
+                    </select>
+
                 <label for="player-rating">Rating</label>
-                <input type="number" id="player-rating" placeholder="Enter rating (e.g., 85)" required>
+                <input type="number" id="player-rating" placeholder="Enter rating (e.g., 85)" >
                 <label for="player-type">Player Type</label>
                 <select id="player-type">
-                    <option value="starting">Starting XI</option>
+                    <option value="starting">Field</option>
                     <option value="bench">Bench</option>
                 </select>
+                <div class="sh">
+                    <button type="button" onclick="toggleSection()">Show/Hide Additional Stats</button>
+                    <div id="additional-stats" style="display: none;">
+                        <label for="player-pace">Pace</label>
+                        <input type="number" id="player-pace" placeholder="Enter pace">
+        
+                        <label for="player-shooting">Shooting</label>
+                        <input type="number" id="player-shooting" placeholder="Enter shooting">
+        
+                        <label for="player-passing">Passing</label>
+                        <input type="number" id="player-passing" placeholder="Enter passing">
+        
+                        <label for="player-dribbling">Dribbling</label>
+                        <input type="number" id="player-dribbling" placeholder="Enter dribbling">
+        
+                        <label for="player-defending">Defending</label>
+                        <input type="number" id="player-defending" placeholder="Enter defending">
+        
+                        <label for="player-physical">Physical</label>
+                        <input type="number" id="player-physical" placeholder="Enter physical">
+                    </div>
+                </div>
                 <button type="submit">Add Player</button>
             </form>
         </section>
@@ -317,9 +106,24 @@
 
     <section class="bench-container" id="bench-container">
         <h3>Bench Players</h3>
-        <!-- Bench players will be added here -->
+        <div class="subs" id="subs">
+
+        </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy;2024 FUT Team Builder .All rights reserved</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+

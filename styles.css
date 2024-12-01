@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     color: white;
     font-family: Arial, sans-serif;
     background-image: url(tet.jpg);
@@ -9,11 +9,92 @@ body {
 }
 .container {
     /* max-width: 1200px; */
+    margin-top: 50px;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
+}
 
+/* General styles for header and footer */
+.site-header, .site-footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+.site-footer .container{
+    /* display: flex; */
+    /* justify-content: space-around; */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+.site-header h1, .site-footer p {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.site-header nav ul, .site-footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+
+.site-header nav ul li, .site-footer nav ul li {
+    display: inline;
+}
+
+.site-header nav ul li a, .site-footer nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1em;
+}
+
+.site-header nav ul li a:hover, .site-footer nav ul li a:hover {
+    color: #007b3a;
+}
+
+/* Additional styles for a more attractive appearance */
+.site-header {
+    background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+.site-footer {
+    background-image: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+.site-footer p {
+    font-size: 1em;
+    text-align: center;
+    flex: 1;
+}
+
+@media (max-width:870px) {
+    .container {
+        flex-direction: column;
+        > .form-section {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
 }
 .form-section, .field-container, .bench-container {
     margin-bottom: 20px;
@@ -23,9 +104,9 @@ body {
     /* width: 100%; */
     /* max-width: 600px; */
     width: 40%;
-    background-color: #333;
+    /* background-color: #333; */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
 }
 .form-section h3 {
     text-align: center;
@@ -70,20 +151,24 @@ body {
     transition: background-color 0.2s;
     display: block;
     width: calc(100% - 20px);
+    margin-bottom: 5px;
 }
 .form-section button:hover {
     background-color: #005a2a;
 }
 .field-container {
-    /* background-image: url('image 1.svg'); */
-    background-size: contain;
+    background-image: url('image1.svg');
+    /* background-color: white; */
+    /* margin: auto; */
+    width: 100%;
+    max-width: 650px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: max-content;
-   min-height: 800px;
+    min-height: 800px;
     position: relative;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +186,7 @@ body {
     border-radius: 8px;
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
 }
-.player-position {
+.player-position, .bench-player {
     background: url('badge_gold.webp') no-repeat center center / cover;
     position: absolute;
     width: 150px;
@@ -114,19 +199,46 @@ body {
     flex-direction: column;
     padding-top: 20px;
     scale: 0.7;
-    
-    
-    
+    flex-shrink: 0;
+}
+
+.bench-player {
+    text-align: center;
+    position: relative;
+    transform: translate(-30%, -30%) !important;
+}
+@media (max-width:550px) {
+    .player-position{
+        width: 75px;
+        height: 100px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 20px;
+        scale: 0.7;
+        flex-shrink: 0;
+    }
+    .player-position .Postyle p{
+        display: none;
+    }
+    .player-position h4{
+        text-align: center;
+    }
 }
 .card{
     width: 105px;
     height: 154px;
     background: url('badge_gold.webp') no-repeat center center / cover;
+    display: none;
 }
 .players{
     width: 90%;
     position: absolute;
-    display: none;
+    /* display: none; */
 }
 #attackers , #center{
     width: 100%;
@@ -150,23 +262,7 @@ body {
     align-items: center;
  }
 
-/* .player-card {
-    position: absolute;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
-    height: 80%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-} */
-.player-position img {
+.player-position img, .bench-player img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -178,11 +274,16 @@ body {
 /* .player-card img{
     background-color: white;
 } */
-.player-position h4,
-.player-position p {
+.player-position h4, .player-position p, .bench-player h4, .bench-player p {
     font-size: 1em;
     margin: 5px 0;
-    color: #fff;
+    color: rgb(40 40 47);
+}
+
+.player-position .Postyle, .bench-player .Postyle{
+    display: flex;
+    justify-content: space-around;
+    gap: 10%;
 }
 
 .player-card p{
@@ -203,23 +304,44 @@ body {
     background-color: #005a2a;
 }
 
-.bench-player {
-    display: inline-block;
-    margin: 10px;
+.additional-stats { 
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px; 
+    border-radius: 8px; 
+    margin-top: 10px; 
+    text-align: left;
+}
+.additional-stats p{
+    color: white;
 }
 
-.bench-player img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+.subs{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    border: rgba(192, 166, 16, 0.582) solid;
+    background-color: rgba(0, 0, 0, 0.514);
+    width: 80%;
+    border-radius: 10px;
+    padding: 1%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    height: 140px;
+    display: flex;
 }
 
-.bench-player .player-card {
-    display: block; 
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    transform: none;
+.edit-button, .delete-button {
+    width: 70%;
+    border-radius: 15px;
+    border: solid gray 1px;
+    box-shadow: 2px 2px 10px black;
+}
+.edit-button {
+    background-color: hsl(240, 50%, 61%);
+    color: white;
+}
+.delete-button{
+    background-color: hsl(0, 100%, 60%);
+    color: white;
 }
