@@ -113,7 +113,7 @@ const playerForm = document.getElementById('player-form');
                     stats.style.display = 'none';
                     if (image) image.style.display = 'block';
                     if (name) name.style.display = 'block';
-                    if (postyle) postyle.style.display = 'block';
+                    if (postyle) postyle.style.display = 'flex';
                     if (editButton) editButton.style.display = 'inline-block';
                     if (deleteButton) deleteButton.style.display = 'inline-block';
                 }

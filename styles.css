@@ -2,7 +2,7 @@ body {
     /* background-color: rgba(0, 0, 0, 0.5); */
     color: white;
     font-family: Arial, sans-serif;
-    background-image: url(tet.jpg);
+    background-image: url(img/tet.jpg);
     box-sizing: border-box;
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,13 +34,15 @@ body {
     /* padding: 0 20px; */
 }
 
-.site-footer .container{
-    /* display: flex; */
+.site-footer .container_{
+    display: flex;
     /* justify-content: space-around; */
     align-items: center;
     max-width: 1200px;
+    background-color: rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     /* padding: 0 20px; */
+    flex-direction: column;
 }
 
 .site-header h1, .site-footer p {
@@ -84,6 +86,7 @@ body {
     font-size: 1em;
     text-align: center;
     flex: 1;
+    margin-top: 10px;
 }
 
 @media (max-width:870px) {
@@ -157,7 +160,7 @@ body {
     background-color: #005a2a;
 }
 .field-container {
-    background-image: url('image1.svg');
+    background-image: url('img/image1.svg');
     /* background-color: white; */
     /* margin: auto; */
     width: 100%;
@@ -187,7 +190,7 @@ body {
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
 }
 .player-position, .bench-player {
-    background: url('badge_gold.webp') no-repeat center center / cover;
+    background: url('img/badge_total_rush.svg') no-repeat center center / cover;
     position: absolute;
     width: 150px;
     height: 200px;
@@ -211,7 +214,7 @@ body {
     .player-position{
         width: 75px;
         height: 100px;
-        position: absolute;
+        /* position: absolute; */
         transform: translate(-50%, -50%);
         cursor: pointer;
         display: flex;
@@ -232,7 +235,7 @@ body {
 .card{
     width: 105px;
     height: 154px;
-    background: url('badge_gold.webp') no-repeat center center / cover;
+    background: url('img/badge_total_rush.svg') no-repeat center center / cover;
     display: none;
 }
 .players{
@@ -263,8 +266,8 @@ body {
  }
 
 .player-position img, .bench-player img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -277,7 +280,7 @@ body {
 .player-position h4, .player-position p, .bench-player h4, .bench-player p {
     font-size: 1em;
     margin: 5px 0;
-    color: rgb(40 40 47);
+    color: white;
 }
 
 .player-position .Postyle, .bench-player .Postyle{
