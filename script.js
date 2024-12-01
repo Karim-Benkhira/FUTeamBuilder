@@ -95,13 +95,13 @@ const playerForm = document.getElementById('player-form');
                 event.stopPropagation();
             
                 const stats = playerPos.querySelector('.additional-stats');
-                const image = playerPos.querySelector('img'); // تصحيح استهداف الصورة
-                const name = playerPos.querySelector('h4'); // تصحيح استهداف اسم اللاعب
-                const postyle = playerPos.querySelector('.Postyle'); // التأكد من صحة الكلاس
-                const editButton = playerPos.querySelector('.edit-button'); // استهداف زر Edit
-                const deleteButton = playerPos.querySelector('.delete-button'); // استهداف زر Delete
+                const image = playerPos.querySelector('img'); 
+                const name = playerPos.querySelector('h4'); 
+                const postyle = playerPos.querySelector('.Postyle');
+                const editButton = playerPos.querySelector('.edit-button'); 
+                const deleteButton = playerPos.querySelector('.delete-button'); 
             
-                // التبديل بين عرض وإخفاء العناصر
+                
                 if (stats.style.display === 'none') {
                     stats.style.display = 'block';
                     if (image) image.style.display = 'none';
