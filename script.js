@@ -213,3 +213,26 @@
             }
             createPlayerCard(playerName, playerPosition, playerRating, selectedFormation, playerType, playerCountry,playerimage,playerpace,playershooting,playerpassing,playerdribbling,playerdefending,playerphysical);
         });
+
+
+
+
+
+
+
+
+
+
+        
+        
+        function NamePlayer()
+        {
+            let Nam = document.getElementById('player-name')
+            let NomJ = document.getElementById('player-form')
+
+
+            let VarVa = []
+
+            for(int if; i < )
+
+        }
