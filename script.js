@@ -1,4 +1,4 @@
-const playerForm = document.getElementById('player-form');
+        const playerForm = document.getElementById('player-form');
         const fieldContainer = document.getElementById('field-container');
         const formationSelect = document.getElementById('formation-select');
         const benchContainer = document.getElementById('bench-container');
